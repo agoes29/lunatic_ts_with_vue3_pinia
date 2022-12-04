@@ -69,7 +69,7 @@
 <style lang="css">
   .form-background {
     border-radius: 11px;
-    background: linear-gradient(145deg, #161616, #1a1a1a);
+    background: var(--color-background);
     box-shadow: 8px 8px 18px #0b0b0b, -8px -8px 18px #252525;
   }
   label {

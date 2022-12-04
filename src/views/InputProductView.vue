@@ -7,11 +7,20 @@
             <h3 class="mb-3">Create Product</h3>
             <div class="form-floating mb-3">
               <input
+                type="file"
+                accept="image/jpeg, image/png"
+                class="form-control"
+                placeholder="input photo"
+                @change="inputProduct.onFileChange"
+              />
+            </div>
+            <div class="form-floating mb-3">
+              <input
                 type="text"
                 class="form-control"
                 id="floatingProduct"
                 placeholder="input nama produk"
-                v-model="inputProduct.titleProduct"
+                v-model="inputData.titleProduct"
               />
               <label for="floatingProduct">Input Nama Produk</label>
             </div>
@@ -21,7 +30,7 @@
                 class="form-control"
                 id="floatingAuthor"
                 placeholder="input nama author"
-                v-model="inputProduct.authorProduct"
+                v-model="inputData.authorProduct"
               />
               <label for="floatingAuthor">Input Author</label>
             </div>
@@ -31,7 +40,7 @@
                 class="form-control"
                 id="floatingPrice"
                 placeholder="input harga barang"
-                v-model="inputProduct.priceProduct"
+                v-model="inputData.priceProduct"
               />
               <label for="floatingName">Input Harga</label>
             </div>
@@ -45,19 +54,20 @@
   </div>
 </template>
 <script setup lang="ts">
-  import { useProductStore } from '@/stores/product';
+  import {useProductStore} from "@/stores/product"
 
   const inputProduct = useProductStore()
+  const inputData = inputProduct.createData
   const createProduct = () => {
     inputProduct.createProduct()
   }
 </script>
 <style lang="css">
-  .form-background {
+  /* .form-background {
     border-radius: 11px;
     background: linear-gradient(145deg, #161616, #1a1a1a);
     box-shadow: 8px 8px 18px #0b0b0b, -8px -8px 18px #252525;
-  }
+  } */
   label {
     color: #181818;
   }

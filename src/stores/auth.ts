@@ -9,17 +9,17 @@ const getCookies = cookies.get("token")
 export const useAuthStore = defineStore({
   id: "auth",
   state: () => ({
-      loginEmail: "",
-      loginPassword: "",
-      loginSuccess: "",
-      loginError: "",
-      registerName: "",
-      registerEmail: "",
-      registerPassword: "",
-      registerSuccess: "",
-      registerError: "",
-      token: getCookies || null,
-    }),
+    loginEmail: "",
+    loginPassword: "",
+    loginSuccess: "",
+    loginError: "",
+    registerName: "",
+    registerEmail: "",
+    registerPassword: "",
+    registerSuccess: "",
+    registerError: "",
+    token: getCookies || null,
+  }),
   getters: {
     setToken: (state) => !!state.token
   },
@@ -37,18 +37,18 @@ export const useAuthStore = defineStore({
       }
       DataService.login(data)
         .then((response) => {
-        const to = response.data.data.token
-        cookies.set("token", to)
-        console.log(to)
-        this.token = response.data.data.token
-        const message = "Login Success!!!"
-        this.loginSuccess = message
-        router.push("/products")
-      })
+          const to = response.data.data.access_token
+          cookies.set("token", to)
+          console.log(to)
+          this.token = to
+          const message = "Login Success!!!"
+          this.loginSuccess = message
+          router.push("/products")
+        })
         .catch((e) => {
-        const message = "An error has occured trying to login."
-        this.loginError =  message
-      })
+          const message = "An error has occured trying to login."
+          this.loginError = message
+        })
     },
     register() {
       const data = {
@@ -64,7 +64,7 @@ export const useAuthStore = defineStore({
           console.log(e)
           const message = "Account is used"
           this.registerError = message
-      })
+        })
     }
   }
 })

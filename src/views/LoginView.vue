@@ -27,10 +27,18 @@
               />
               <label for="floatingPassword">Password</label>
             </div>
-            <div type="success" class="alert alert-success m-2" v-if="auth.loginSuccess">
+            <div
+              type="success"
+              class="alert alert-success m-2"
+              v-if="auth.loginSuccess"
+            >
               {{ auth.loginSuccess }}
             </div>
-            <div type="error" class="alert alert-danger m-2" v-if="auth.loginError">
+            <div
+              type="error"
+              class="alert alert-danger m-2"
+              v-if="auth.loginError"
+            >
               {{ auth.loginError }}
             </div>
             <button type="submit" class="w-100 btn btn-success mt-3">
@@ -43,20 +51,19 @@
   </div>
 </template>
 <script setup lang="ts">
-import { useAuthStore } from '../stores/auth'
+  import {useAuthStore} from "../stores/auth"
 
   const auth = useAuthStore()
-  const loginProduct = () => {  
+  const loginProduct = () => {
     auth.login()
     auth.loginEmail = ""
     auth.loginPassword = ""
   }
-
 </script>
 <style lang="css">
   .form-background {
     border-radius: 11px;
-    background: linear-gradient(145deg, #161616, #1a1a1a);
+    background: var(--color-background);
     box-shadow: 8px 8px 18px #0b0b0b, -8px -8px 18px #252525;
   }
   label {
