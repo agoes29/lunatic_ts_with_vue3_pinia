@@ -11,8 +11,14 @@
           <li><RouterLink to="/">Home</RouterLink></li>
           <li><RouterLink to="/products">Product</RouterLink></li>
           <li><RouterLink to="/test">Test</RouterLink></li>
-          <li><a href="#" class="nav-link scrollto">Portfolio</a></li>
-          <li><a href="#" class="nav-link scrollto">Team</a></li>
+          <li>
+            <a
+              href="https://skeleton-web.prasetyoadisantoso.com/en"
+              class="nav-link scrollto"
+              >Portfolio</a
+            >
+          </li>
+          <li><a href="#developer" class="nav-link scrollto">Team</a></li>
           <li class="dropdown">
             <a href="#"
               ><span class="me-2">Dropdown</span>
@@ -21,10 +27,24 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Action</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </li>
             </ul>
           </li>
           <li>
+            <a
+              href="https://skeleton-web.prasetyoadisantoso.com/en/authentication/login/page"
+              >Login</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://skeleton-web.prasetyoadisantoso.com/en/authentication/register/page"
+              >Register</a
+            >
+          </li>
+          <!-- <li>
             <RouterLink to="/login" v-if="!auth.setToken">Login</RouterLink>
           </li>
           <li>
@@ -34,12 +54,17 @@
           </li>
           <li>
             <a href="#" v-if="auth.setToken" @click="auth.logout()">Logout</a>
-          </li>
+          </li> -->
           <DarkMode />
         </ul>
         <font-icon
           icon="fa-solid fa-bars"
           class="mobile-nav-toggle"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbar-down"
+          aria-controls="navbar-down"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         ></font-icon>
       </nav>
     </div>

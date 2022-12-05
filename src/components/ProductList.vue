@@ -1,12 +1,12 @@
 <template>
-  <div class="container my-4">
+  <div class="container my-5 pt-3">
     <h3>Detail Product</h3>
     <router-link to="/products/create" class="btn btn-success"
       >Create Products</router-link
     >
     <div class="row mt-2 g-1">
       <div
-        class="col-md-4 p-1 me-2"
+        class="col-md-3 col-card p-1 mx-1"
         v-for="product in products"
         :key="product.id"
       >
@@ -72,6 +72,11 @@
   .row {
     display: flex;
     flex-wrap: wrap;
+  }
+  @media (min-width: 768px) {
+    .col-card {
+      width: 24%;
+    }
   }
   /* .small-color,
   .text-color {

@@ -51,7 +51,7 @@
     </div>
   </section>
   <!-- Developer -->
-  <section class="testimonials text-center mt-4">
+  <section id="developer" class="testimonials text-center mt-4">
     <div class="container">
       <h2 class="mb-5">Developer</h2>
       <div class="row">

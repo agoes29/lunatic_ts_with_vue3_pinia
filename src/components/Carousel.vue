@@ -17,7 +17,7 @@
         >
           <div class="animated">
             <img
-              src="@/assets/Artboard_14x.png"
+              src="@/assets/Logo_34xx.png"
               height="400"
               width="400"
               class="img-fluid"
