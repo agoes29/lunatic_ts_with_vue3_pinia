@@ -50,8 +50,48 @@
       </div>
     </div>
   </section>
+
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <div class="row gy-3">
+        <div
+          class="col-lg-5 order-2 order-lg-2 d-flex flex-column justify-content-center"
+        >
+          <h1>Framework Standard</h1>
+          <p>
+            Built from scratch according to Laravel and Bootstrap conventions
+            with some easy customization. Bridging developers with ordinary
+            users in developing the system according to their wishes.
+          </p>
+          <!-- <div>
+            <a href="#about" class="btn-get-started scrollto">Get Started</a>
+          </div> -->
+        </div>
+        <div
+          class="col-lg-7 order-1 order-lg-1 hero-img d-flex flex-column justify-content-center"
+        >
+          <div class="animated">
+            <img
+              src="@/assets/bg-showcase-2.png"
+              height="400"
+              width="400"
+              class="img-fluid"
+              alt=""
+            />
+            <img
+              src="@/assets/bg-showcase-3.png"
+              height="100"
+              width="100"
+              class="img-fluid"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- Developer -->
-  <section id="developer" class="testimonials text-center mt-4">
+  <section id="developer" class="testimonials text-center mt-5">
     <div class="container">
       <h2 class="mb-5">Developer</h2>
       <div class="row">

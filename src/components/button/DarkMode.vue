@@ -1,14 +1,21 @@
 <template>
   <li>
     <a href="#" class="nav-link scrollto" @click="toggleTheme">
-      <span v-if="!nightMode"><font-icon icon="fas fa-sun" /> Light</span>
-      <span v-else><font-icon icon="fas fa-moon" /> Dark</span>
+      <span v-if="!nightMode"
+        ><font-icon icon="fas fa-sun" :class="{iconsize}" /> Light</span
+      >
+      <span v-else
+        ><font-icon icon="fas fa-moon" :class="{iconsize}" /> Dark</span
+      >
     </a>
   </li>
 </template>
 
 <script lang="ts">
   export default {
+    props: {
+      iconsize: String,
+    },
     mounted() {
       const initUserTheme = this.getTheme() || this.getMediaPreference()
       this.setTheme(initUserTheme)

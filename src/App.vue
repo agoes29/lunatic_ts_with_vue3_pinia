@@ -5,6 +5,7 @@
 </script>
 
 <template>
+  <!-- <Headers v-if="$route.name != 'landing'" /> -->
   <Headers />
 
   <main id="main">
@@ -14,6 +15,9 @@
 </template>
 
 <style scoped>
+  #main {
+    margin-top: 5rem;
+  }
   header {
     line-height: 1.5;
     max-height: 100vh;

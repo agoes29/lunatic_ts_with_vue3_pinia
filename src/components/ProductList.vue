@@ -14,6 +14,7 @@
           <div class="text-center mt-2 p-2">
             <img
               :src="imageStore + product.image"
+              class="image-fit"
               alt=""
               width="150"
               height="150"
@@ -66,6 +67,9 @@
   }
 </script>
 <style lang="css">
+  .image-fit {
+    object-fit: cover;
+  }
   .text-cr {
     color: aliceblue;
   }

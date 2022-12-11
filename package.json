@@ -17,6 +17,7 @@
     "@vee-validate/zod": "^4.6.9",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.1",
+    "jquery": "^3.6.1",
     "mosha-vue-toastify": "^1.0.23",
     "pinia": "^2.0.21",
     "pinia-plugin-persistedstate": "^2.3.0",

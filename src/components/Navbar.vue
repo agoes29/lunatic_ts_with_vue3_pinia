@@ -3,14 +3,34 @@
     <div class="container d-flex align-items-center justify-content-between">
       <div class="logo">
         <h1 class="text-light">
-          <a href="#"><span>Skeleton Web</span></a>
+          <img class="m-3" src="../assets/Logo_34xx.png" alt="" />
+          <RouterLink to="/" @click="scrollto()"
+            ><span>Skeleton Web</span></RouterLink
+          >
         </h1>
       </div>
-      <nav class="navbar" id="navbar">
+      <nav class="navbar" :class="{'navbar-mobile': mobileMode}" id="navbar">
         <ul>
-          <li><RouterLink to="/">Home</RouterLink></li>
-          <li><RouterLink to="/products">Product</RouterLink></li>
-          <li><RouterLink to="/test">Test</RouterLink></li>
+          <li>
+            <RouterLink to="/home" @click="scrollto()"
+              ><span
+                ><font-icon icon="fa-solid fa-home" class="me-2" />Home</span
+              ></RouterLink
+            >
+          </li>
+          <li>
+            <RouterLink to="/products" @click="scrollto()">Product</RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/test" @click="scrollto()"
+              ><span
+                ><font-icon
+                  icon="fa-solid fa-gauge"
+                  class="me-2"
+                />Dashboard</span
+              ></RouterLink
+            >
+          </li>
           <li>
             <a
               href="https://skeleton-web.prasetyoadisantoso.com/en"
@@ -18,17 +38,25 @@
               >Portfolio</a
             >
           </li>
-          <li><a href="#developer" class="nav-link scrollto">Team</a></li>
+          <li><a href="/home#developer" class="nav-link scrollto">Team</a></li>
           <li class="dropdown">
-            <a href="#"
+            <a href="#" @click="dropdownMobile()"
               ><span class="me-2">Dropdown</span>
               <font-icon icon="fa-solid fa-chevron-down" />
             </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
+            <ul class="dropdown-menu" :class="{'dropdown-active': active}">
               <li>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" @click="scrollto()" href="#">Action</a>
+              </li>
+              <li>
+                <a class="dropdown-item" @click="scrollto()" href="#"
+                  >Another action</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" @click="scrollto()" href="#"
+                  >Something else here</a
+                >
               </li>
             </ul>
           </li>
@@ -58,25 +86,56 @@
           <DarkMode />
         </ul>
         <font-icon
+          v-if="!mobileMode"
           icon="fa-solid fa-bars"
           class="mobile-nav-toggle"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbar-down"
-          aria-controls="navbar-down"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          @click="mobileNav()"
+        ></font-icon>
+        <font-icon
+          v-else
+          icon="fa-solid fa-xmark"
+          class="mobile-nav-toggle"
+          @click="mobileNav()"
         ></font-icon>
       </nav>
     </div>
   </header>
 </template>
-<script setup lang="ts">
-  import "@/services/main.js"
+<script lang="ts">
   import {RouterLink} from "vue-router"
   import DarkMode from "../components/button/DarkMode.vue"
   import {useAuthStore} from "@/stores/auth"
-  const auth = useAuthStore()
+
+  // const auth = useAuthStore()
+  export default {
+    components: {
+      DarkMode,
+    },
+    data() {
+      return {
+        icon: "fa-solid fa-bars" as any,
+        mobileMode: false,
+        active: false,
+      }
+    },
+    methods: {
+      mobileNav() {
+        this.mobileMode = !this.mobileMode
+      },
+      dropdownMobile() {
+        if ((this.mobileMode = true)) {
+          this.active = !this.active
+        }
+      },
+      scrollto() {
+        if ((this.mobileMode = true)) {
+          this.mobileMode = false
+        }
+      },
+    },
+  }
 </script>
+
 <style lang="css">
   /*--------------------------------------------------------------
 # Header
@@ -262,10 +321,13 @@
     .navbar ul {
       display: none;
     }
+    .hide {
+      display: none;
+    }
   }
 
   .navbar-mobile {
-    position: fixed;
+    position: fixed !important;
     overflow: hidden;
     top: 0;
     right: 0;
@@ -297,8 +359,14 @@
   .navbar-mobile a,
   .navbar-mobile a:focus {
     padding: 10px 20px;
-    font-size: 15px;
+    font-size: 18px;
     color: #7a6960;
+  }
+
+  .navbar-mobile .dropdown ul a {
+    padding: 10px 20px;
+    font-size: 18px;
+    text-transform: none;
   }
 
   .navbar-mobile a:hover,

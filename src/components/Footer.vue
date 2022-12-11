@@ -9,8 +9,8 @@
 <script setup lang="ts"></script>
 <style lang="css">
   footer.footer {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
   }
   .footer p {
     color: var(--text-secondary-color);
