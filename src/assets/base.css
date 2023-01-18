@@ -1,90 +1,535 @@
-/* color palette from <https://github.com/vuejs/theme> */
-:root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
-
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
-
-  --vt-c-indigo: #2c3e50;
-
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
-
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+/* Page */
+body {
+  height: 100vh;
+  overflow: hidden;
 }
 
-:root {
-  --background-color-primary: #ebebeb;
-  --background-color-secondary: #fafafa;
-  --accent-color: #cacaca;
-  --text-primary-color: #222;
-  --element-size: 4rem;
+.containerize {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow-x: hidden;
 }
 
-:root.dark-theme {
-  --background-color-primary: #1e1e1e;
-  --background-color-secondary: #2d2d30;
-  --accent-color: #3f3f3f;
-  --text-primary-color: #ddd;
+.page {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* semantic color variables for this project */
-:root {
-  --color-background: var(--background-color-primary);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
-
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
-
-  --color-heading: var(--text-primary-color);
-  --color-text: var(--text-primary-color);
-
-  --section-gap: 160px;
+.page_1 {
+  background-color: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--background-color-primary);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
+.page_2 {
+  background-color: #ffffff;
+}
 
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
+.page_3 {
+  background-color: #ffffff;
+}
 
-    --color-heading: var(--text-primary-color);
-    --color-text: var(--text-primary-color);
+.page_4 {
+  background-color: #ffffff;
+}
+
+.page_5 {
+  background-color: #ffffff;
+}
+
+.scroll {
+  position: absolute;
+  height: 5px;
+  width: 0;
+  background-color: #212529;
+  bottom: 0;
+  left: 0;
+}
+
+#homepage {
+  height: 100%;
+}
+
+/* Home Page 1 */
+
+.home-1 {
+  width: 125vh;
+}
+
+#home-row {
+  display: flex;
+  align-items: center;
+}
+
+.containerize .description h1 {
+  font-weight: 200;
+  color: #6c757d;
+}
+
+@media only screen and (max-width: 1930px) {
+  .macbook {
+    width: 70%;
+    position: relative;
+    z-index: 100;
+    transform: translate(0px, 250px);
+  }
+
+  #demoCanvas {
+    width: 90%;
+    position: relative;
+    transform: translate(0px, -100px);
   }
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  position: relative;
-  font-weight: normal;
+/* Home Page Macbook */
+@media only screen and (max-width: 1410px) {
+  .macbook {
+    width: 90%;
+    position: relative;
+    z-index: 100;
+    transform: translate(0px, 200px);
+  }
+
+  #demoCanvas {
+    width: 90%;
+    position: relative;
+    transform: translate(0px, -120px);
+  }
 }
 
-body {
-  /* min-height: 100vh; */
-  color: var(--color-text);
-  background: var(--color-background);
-  transition: color 0.5s, background-color 0.5s;
-  line-height: 1.6;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  font-size: 15px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Home Page General Laptop */
+@media only screen and (max-width: 1369px) {
+  .macbook {
+    width: 90%;
+    position: relative;
+    z-index: 100;
+    transform: translate(0px, 150px);
+  }
+
+  #demoCanvas {
+    width: 90%;
+    position: relative;
+    transform: translate(0px, -100px);
+  }
+}
+
+/* Mobile Home Page */
+@media only screen and (max-width: 992px) {
+  .home-1 {
+    width: 100vh;
+  }
+
+  .animation {
+    height: 20vh;
+    text-align: center;
+  }
+
+  .descriptions {
+    width: 50%;
+  }
+
+  .macbook {
+    width: 50%;
+    position: relative;
+    z-index: 100;
+    transform: translate(0px, 100px);
+  }
+
+  #demoCanvas {
+    width: 50%;
+    position: relative;
+    transform: translate(0px, 0px);
+  }
+
+  .animation {
+    width: 90%;
+    height: 90%;
+  }
+
+  .social {
+    width: 50%;
+  }
+}
+
+/* iPhone 12 */
+@media only screen and (max-width: 400px) and (max-height: 850px) {
+  .descriptions h1 {
+    width: 100%;
+    font-size: 15px !important;
+  }
+
+  .social i {
+    width: 100%;
+    font-size: 25px !important;
+    text-align: center;
+  }
+
+  .macbook {
+    width: 40%;
+    position: relative;
+    z-index: 100;
+    transform: translate(0px, 90px);
+  }
+
+  #demoCanvas {
+    width: 40%;
+    position: relative;
+    transform: translate(0px, 0px);
+  }
+}
+
+/* Features Page */
+#features {
+  width: 100vw;
+}
+
+#features-row {
+  display: flex;
+  align-items: center;
+}
+
+.feature-1-icon i {
+  font-size: 100px;
+}
+
+.feature-1-icon h5 {
+  font-weight: bold;
+}
+
+.feature-2-icon i {
+  font-size: 100px;
+}
+
+.feature-2-icon h5 {
+  font-weight: bold;
+}
+
+.feature-3-icon i {
+  font-size: 100px;
+}
+
+/* Feature Page iPhone 12 */
+@media only screen and (max-width: 400px) and (max-height: 850px) {
+  .feature-1-icon i {
+    font-size: 50px;
+  }
+
+  .feature-1-icon h5 {
+    font-weight: bold;
+  }
+
+  .feature-2-icon i {
+    font-size: 50px;
+  }
+
+  .feature-2-icon h5 {
+    font-weight: bold;
+  }
+
+  .feature-3-icon i {
+    font-size: 50px;
+  }
+
+  .feature-3-icon h5 {
+    font-weight: bold;
+  }
+}
+
+.feature-3-icon h5 {
+  font-weight: bold;
+}
+
+/* Framework Page */
+#framework-img {
+  width: 80%;
+  transition: transform 0.2s ease-in-out;
+}
+
+#framework-img:hover {
+  transform: scale(1.1);
+}
+
+#framework h1 {
+  color: #343a40;
+  font-weight: bold;
+}
+
+#framework h5 {
+  color: #6c757d;
+  font-weight: 200;
+}
+
+/* Framework iPhone 12 */
+@media only screen and (max-width: 400px) and (max-height: 850px) {
+  #framework-img {
+    width: 60%;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  #framework-img:hover {
+    transform: scale(1.1);
+  }
+
+  #framework h1 {
+    color: #343a40;
+    font-weight: bold;
+  }
+
+  #framework h5 {
+    color: #6c757d;
+    font-weight: 200;
+  }
+}
+
+/* Development Page */
+#development h2 {
+  color: #343a40;
+  font-weight: bold;
+}
+
+#development h5 {
+  color: #6c757d;
+  font-weight: 200;
+}
+
+#development-img {
+  width: 80%;
+  transition: transform 0.2s ease-in-out;
+}
+
+#development-img:hover {
+  transform: scale(1.1);
+}
+
+#development h1 {
+  color: #343a40;
+  font-weight: bold;
+}
+
+#development h5 {
+  color: #6c757d;
+  font-weight: 200;
+}
+
+/* Development Page iPhone 12 */
+@media only screen and (max-width: 400px) and (max-height: 850px) {
+  #development h2 {
+    color: #343a40;
+    font-weight: bold;
+  }
+
+  #development h5 {
+    color: #6c757d;
+    font-weight: 200;
+  }
+
+  #development-img {
+    width: 60%;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  #development-img:hover {
+    transform: scale(1.1);
+  }
+
+  #development h1 {
+    color: #343a40;
+    font-weight: bold;
+  }
+
+  #development h5 {
+    color: #6c757d;
+    font-weight: 200;
+  }
+}
+
+/* Developer Page */
+
+#developer .title {
+  color: #343a40;
+  font-weight: bold;
+}
+
+#developer img {
+  width: 40%;
+  transition: transform 0.2s ease-in-out;
+}
+
+#developer img:hover {
+  transform: scale(1.1);
+}
+
+@media only screen and (max-width: 992px) {
+  #developer {
+    height: 70vh;
+  }
+}
+
+/* FAB */
+.zoom {
+  position: fixed;
+  bottom: 20px;
+  right: 24px;
+  height: 70px;
+  z-index: 1000;
+}
+
+.zoom-fab {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 40px;
+  border-radius: 50%;
+  background-color: #009688;
+  vertical-align: middle;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.2s ease-out;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  color: #fff;
+}
+
+.zoom-fab:hover {
+  background-color: #4db6ac;
+  color: #ffffff;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -1px rgba(0, 0, 0, 0.2);
+}
+
+.zoom-btn-large {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+}
+
+.zoom-btn {
+  background-color: #ffffff;
+  font-size: 20px;
+}
+
+.zoom-btn > i {
+  padding-top: 15px;
+  color: #ffffff;
+}
+
+.zoom-btn:hover {
+  color: #ffffff;
+  background-color: #ffffff;
+}
+
+.zoom-menu {
+  position: absolute;
+  right: 70px;
+  left: auto;
+  top: 50%;
+  transform: translateY(-40%);
+  height: 100%;
+  width: 500px;
+  list-style: none;
+  text-align: right;
+}
+
+.zoom-menu li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.zoom-card {
+  position: absolute;
+  right: 150px;
+  bottom: 70px;
+  transition: box-shadow 0.25s;
+  padding: 24px;
+  border-radius: 2px;
+  background-color: #009688;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+.zoom-card ul {
+  -webkit-padding-start: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.scale-transition {
+  transition: transform 0.3s cubic-bezier(0.53, 0.01, 0.36, 1.63) !important;
+}
+
+.scale-transition.scale-out {
+  transform: scale(0);
+  transition: transform 0.2s !important;
+}
+
+.scale-transition.scale-in {
+  transform: scale(1);
+}
+
+/* Mobile FAB */
+@media only screen and (max-width: 992px) {
+  .zoom {
+    position: fixed;
+    bottom: 50px;
+    right: 24px;
+    height: 70px;
+    z-index: 1000;
+  }
+}
+
+/* Preloader */
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.preloader {
+  position: absolute;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rotate {
+  animation: rotation 1s infinite linear;
+}
+
+.rotate-hidden {
+  display: none;
+}
+
+.loader-hidden {
+  animation: fadeOut 1s;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.loader-hidden-fast {
+  animation: fadeOut 0.1s;
+  animation-delay: 0.1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }

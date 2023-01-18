@@ -10,13 +10,14 @@ import 'bootstrap'
 
 
 import './services/iconLibrary'
+import '/node_modules/flag-icons/css/flag-icons.min.css'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import './assets/main.css'
 
 const pinia = createPinia()
 const app = createApp(App)
 
-app.component('font-icon', FontAwesomeIcon)
+app.component('icon', FontAwesomeIcon)
 
 app.use(VueCookies, {
   expireTimes: "1h",
