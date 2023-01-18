@@ -1,11 +1,15 @@
 <script setup lang="ts">
   import HomePage from "@/components/pages/HomePage.vue"
+  import FeaturePage from "@/components/pages/FeaturePage.vue"
 </script>
 
 <template>
   <article>
     <section>
       <HomePage />
+    </section>
+    <section>
+      <FeaturePage />
     </section>
   </article>
 </template>
