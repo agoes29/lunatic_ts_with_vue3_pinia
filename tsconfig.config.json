@@ -3,6 +3,10 @@
   "include": ["vite.config.*", "vitest.config.*", "cypress.config.*"],
   "compilerOptions": {
     "composite": true,
-    "types": ["node"]
+    "types": ["node"],
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "allowJs": true,
+    "bootstrap/dist/js/bootstrap" : ["./node_modules/types/bootstrap"]
   }
 }

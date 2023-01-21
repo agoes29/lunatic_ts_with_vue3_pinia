@@ -2,12 +2,13 @@
   import {RouterView} from "vue-router"
   import Footers from "./components/Footer.vue"
   import Headers from "./components/Navbar.vue"
+  import Modal from "./components/partial/Modal.vue"
 </script>
 
 <template>
   <!-- <Headers v-if="$route.name != 'landing'" /> -->
   <Headers />
-
+  <Modal />
   <div class="containerize">
     <RouterView />
   </div>

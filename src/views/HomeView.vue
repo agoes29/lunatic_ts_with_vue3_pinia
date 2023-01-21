@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import HomePage from "@/components/pages/HomePage.vue"
   import FeaturePage from "@/components/pages/FeaturePage.vue"
+  import FrameworkPage from "@/components/pages/FrameworkPage.vue"
 </script>
 
 <template>
@@ -10,6 +11,9 @@
     </section>
     <section>
       <FeaturePage />
+    </section>
+    <section>
+      <FrameworkPage />
     </section>
   </article>
 </template>
