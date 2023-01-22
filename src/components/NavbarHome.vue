@@ -4,7 +4,9 @@
       <!-- Brand Logo -->
       <div class="container">
         <div class="d-flex justify-content-start">
-          <img id="logo" src="../assets/logo.svg" alt="" />
+          <router-link to="/">
+            <img id="logo" src="../assets/logo.svg" alt="" />
+          </router-link>
           <h2 class="ms-3 my-auto" id="text-logo">Skeleton Web</h2>
         </div>
       </div>
@@ -38,8 +40,8 @@
               </ul>
             </li>
             <li>
-              <a href="#" class="text-dark"
-                ><icon icon="fas fa-blog" class="me-3" />Blog</a
+              <router-link to="blog" class="text-dark"
+                ><icon icon="fas fa-blog" class="me-3" />Blog</router-link
               >
             </li>
             <li>
@@ -71,5 +73,7 @@
     </div>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import {RouterLink} from "vue-router"
+</script>
 <style lang=""></style>

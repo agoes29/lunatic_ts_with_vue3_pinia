@@ -1,18 +1,46 @@
 <script setup lang="ts">
   import {RouterView} from "vue-router"
   import Footers from "./components/Footer.vue"
-  import Headers from "./components/Navbar.vue"
+  import HeadersHome from "./components/NavbarHome.vue"
+  import HeadersBlog from "./components/NavbarBlog.vue"
   import Modal from "./components/partial/Modal.vue"
+</script>
+<script lang="ts">
+  export default {
+    data() {
+      return {
+        isLoading: true,
+      }
+    },
+    mounted() {
+      setTimeout(() => {
+        this.isLoading = false
+      }, 3000)
+    },
+    computed: {
+      homes() {
+        return this.$route.name === "home"
+      },
+      blogs() {
+        return this.$route.name === "blog"
+      },
+    },
+  }
 </script>
 
 <template>
   <!-- <Headers v-if="$route.name != 'landing'" /> -->
-  <Headers />
-  <Modal />
-  <div class="containerize">
+  <main v-if="!isLoading">
+    <HeadersHome v-if="homes" />
+    <HeadersBlog v-if="blogs" />
+
+    <Modal />
     <RouterView />
+    <Footers />
+  </main>
+  <div class="preloader" v-if="isLoading">
+    <img src="./assets/img/logo.png" class="rotate" width="100" height="100" />
   </div>
-  <Footers />
 </template>
 
 <style scoped>

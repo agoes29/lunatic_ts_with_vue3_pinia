@@ -7,23 +7,25 @@
 </script>
 
 <template>
-  <article>
-    <section>
-      <HomePage />
-    </section>
-    <section>
-      <FeaturePage />
-    </section>
-    <section>
-      <FrameworkPage />
-    </section>
-    <section>
-      <SaveTimePage />
-    </section>
-    <section>
-      <DeveloperPage />
-    </section>
-  </article>
+  <div class="containerize">
+    <article>
+      <section>
+        <HomePage />
+      </section>
+      <section>
+        <FeaturePage />
+      </section>
+      <section>
+        <FrameworkPage />
+      </section>
+      <section>
+        <SaveTimePage />
+      </section>
+      <section>
+        <DeveloperPage />
+      </section>
+    </article>
+  </div>
 </template>
 
 <style>

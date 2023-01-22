@@ -14,6 +14,7 @@ import '/node_modules/flag-icons/css/flag-icons.min.css'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import './assets/main.css'
 
+
 const pinia = createPinia()
 const app = createApp(App)
 
