@@ -353,7 +353,8 @@ body {
 }
 
 #developer img {
-  width: 40%;
+  /* width: 40%; */
+  width: 15%;
   transition: transform 0.2s ease-in-out;
 }
 

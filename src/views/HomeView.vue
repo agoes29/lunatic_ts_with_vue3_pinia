@@ -2,6 +2,8 @@
   import HomePage from "@/components/pages/HomePage.vue"
   import FeaturePage from "@/components/pages/FeaturePage.vue"
   import FrameworkPage from "@/components/pages/FrameworkPage.vue"
+  import SaveTimePage from "@/components/pages/SaveTimePage.vue"
+  import DeveloperPage from "@/components/pages/DeveloperPage.vue"
 </script>
 
 <template>
@@ -14,6 +16,12 @@
     </section>
     <section>
       <FrameworkPage />
+    </section>
+    <section>
+      <SaveTimePage />
+    </section>
+    <section>
+      <DeveloperPage />
     </section>
   </article>
 </template>

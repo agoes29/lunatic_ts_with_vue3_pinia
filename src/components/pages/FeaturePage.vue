@@ -14,7 +14,7 @@
             class="feature-1-icon crimson text-center"
             href="#feature-1"
             role="button"
-            @mouseover="showIndex['feature-1'] = !showIndex['feature-1']"
+            @mouseenter="showIndex['feature-1'] = !showIndex['feature-1']"
             @mouseleave="showIndex['feature-1'] = false"
           >
             <icon icon="fas fa-gauge" style="font-size: 5rem" class="mb-2" />
@@ -45,7 +45,7 @@
             aria-expanded="false"
             aria-controls="feature-2"
             @mouseover="showIndex['feature-2'] = true"
-            @mouseout="showIndex['feature-2'] = false"
+            @mouseleave="showIndex['feature-2'] = false"
           >
             <icon
               icon="fas fa-layer-group"
@@ -76,7 +76,7 @@
             class="feature-3-icon seagreen crimson text-center"
             role="button"
             @mouseover="showIndex['feature-3'] = !showIndex['feature-3']"
-            @mouseout="showIndex['feature-3'] = false"
+            @mouseleave="showIndex['feature-3'] = false"
           >
             <icon
               icon="fas fa-shield-halved"

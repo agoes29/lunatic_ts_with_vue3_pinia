@@ -39,12 +39,17 @@
             </li>
             <li>
               <a href="#" class="text-dark"
-                ><icon icon="fas fa-gauge" class="me-3" />Dashboard</a
+                ><icon icon="fas fa-blog" class="me-3" />Blog</a
               >
             </li>
             <li>
               <a href="#news" class="text-dark"
-                ><icon icon="fas fa-right-from-bracket" class="me-3" />Sign</a
+                ><icon icon="fas fa-right-to-bracket" class="me-3" />Sign</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-dark"
+                ><icon icon="fas fa-user-plus" class="me-3" />Register</a
               >
             </li>
           </ul>

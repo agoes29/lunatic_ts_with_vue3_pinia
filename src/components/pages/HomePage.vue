@@ -10,9 +10,9 @@
             <h1>FRAMEWORK</h1>
             <h1>
               <icon
-                icon="fab fa-laravel"
+                icon="fab fa-vuejs"
                 class="me-3"
-                style="color: #f9322c"
+                style="color: #41b883"
               />&<icon
                 icon="fab fa-bootstrap"
                 class="ms-3"
