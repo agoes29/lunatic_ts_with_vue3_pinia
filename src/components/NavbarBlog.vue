@@ -40,7 +40,7 @@
               </ul>
             </li>
             <li>
-              <router-link to="blog" class="text-dark"
+              <router-link to="/blog" class="text-dark"
                 ><icon icon="fas fa-blog" class="me-3" />Blog</router-link
               >
             </li>

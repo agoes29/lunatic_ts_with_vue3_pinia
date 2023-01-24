@@ -2,6 +2,7 @@
   import {watch, onMounted} from "vue"
   import http from "@/http"
   import Search from "@/components/partial/Search.vue"
+  import SideMenu from "@/components/partial/SideMenu.vue"
   import BlogCard from "@/components/partial/BlogCard.vue"
   import {ref} from "vue"
   interface Props {
@@ -11,7 +12,7 @@
   onMounted(() => {
     document.body.className = "blogs"
   })
-  // const handleSearch = (searchValue: Props) => {}
+
   const blogPosts: any = ref([])
   const filtered: any = ref([])
 
@@ -25,6 +26,7 @@
     )
     .then((response) => {
       blogPosts.value = response.data.data
+      console.log(response.data.data)
     })
 
   const handleSearch = (searchValue: String) => {
@@ -57,6 +59,8 @@
               :image="post.featured_image"
               :title="post.title"
               :summary="post.summary"
+              :authorImage="post.author.profile_image"
+              :authorName="post.author.first_name + ' ' + post.author.last_name"
             />
           </div>
           <div class="container mt-5 w-100 w-md-50">
@@ -75,62 +79,7 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="container text-center mt-5 mt-md-0">
-            <h3 class="fw-bold text-gray">Categories</h3>
-          </div>
-          <div class="container text-center">
-            <ul class="list-group">
-              <li class="list-group-item border-0">
-                <a
-                  class="text-decoration-none text-secondary"
-                  href="https://skeleton-web.prasetyoadisantoso.com/en/blog/category/sample-category"
-                  >Sample Category</a
-                >
-              </li>
-              <li class="list-group-item border-0">
-                <a
-                  class="text-decoration-none text-secondary"
-                  href="https://skeleton-web.prasetyoadisantoso.com/en/blog/category/uncategorized"
-                  >Uncategorized</a
-                >
-              </li>
-              <li class="list-group-item border-0">
-                <a
-                  class="text-decoration-none text-secondary"
-                  href="https://skeleton-web.prasetyoadisantoso.com/en/blog/category/parent-category"
-                  >Parent Category</a
-                >
-              </li>
-              <li class="list-group-item border-0">
-                <a
-                  class="text-decoration-none text-secondary"
-                  href="https://skeleton-web.prasetyoadisantoso.com/en/blog/category/sub-category"
-                  >Sub Category</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="container text-center mt-5">
-            <h3 class="fw-bold text-gray">Tags</h3>
-          </div>
-          <div class="container text-center">
-            <ul class="list-group">
-              <li class="list-group-item border-0">
-                <a
-                  class="text-decoration-none text-secondary"
-                  href="https://skeleton-web.prasetyoadisantoso.com/en/blog/tag/good"
-                  >good</a
-                >
-              </li>
-              <li class="list-group-item border-0">
-                <a
-                  class="text-decoration-none text-secondary"
-                  href="https://skeleton-web.prasetyoadisantoso.com/en/blog/tag/new"
-                  >new</a
-                >
-              </li>
-            </ul>
-          </div>
+          <SideMenu />
         </div>
       </div>
     </div>

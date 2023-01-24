@@ -8,6 +8,10 @@
     <div class="col-md-6">
       <div class="container blog-content text-center text-md-start">
         <h3 class="fw-bold text-gray mt-3 mt-md-0">{{ title }}</h3>
+        <div class="card__author">
+          <img class="rounded-circle" :src="authorImage" />
+          <span>{{ authorName }}</span>
+        </div>
         <div class="text-truncation text-secondary">
           <p>
             {{ summary }}
@@ -33,4 +37,16 @@
     "authorName",
   ])
 </script>
-<style lang=""></style>
+<style lang="css">
+  .card__author img {
+    object-fit: cover;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    vertical-align: middle;
+  }
+
+  .card__author span {
+    margin-left: 10px;
+  }
+</style>

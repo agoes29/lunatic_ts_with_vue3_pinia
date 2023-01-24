@@ -25,9 +25,6 @@
       blogs() {
         return this.$route.name === "blog"
       },
-      blogsDetail() {
-        return this.$route.name === "blog-detail"
-      },
     },
   }
 </script>
