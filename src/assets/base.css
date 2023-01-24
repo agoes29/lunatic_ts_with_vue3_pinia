@@ -1,7 +1,13 @@
 /* Page */
-body {
+body.home {
   height: 100vh;
   overflow: hidden;
+}
+body.blogs {
+  margin: 0 0;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  /* overflow: scroll; */
 }
 
 .containerize {

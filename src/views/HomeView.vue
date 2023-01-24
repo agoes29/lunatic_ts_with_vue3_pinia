@@ -4,7 +4,19 @@
   import FrameworkPage from "@/components/pages/FrameworkPage.vue"
   import SaveTimePage from "@/components/pages/SaveTimePage.vue"
   import DeveloperPage from "@/components/pages/DeveloperPage.vue"
+  import {onMounted} from "vue"
+  onMounted(() => {
+    document.body.className = "home"
+  })
 </script>
+
+<!-- <script lang="ts">
+  export default {
+    beforeCreate: function () {
+      document.body.className = "home"
+    },
+  }
+</script> -->
 
 <template>
   <div class="containerize">
@@ -33,7 +45,7 @@
     margin: 0;
     scroll-behavior: smooth;
   }
-  ::-webkit-scrollbar {
+  body.home ::-webkit-scrollbar {
     display: none;
   }
   article {

@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid" id="navigation">
+  <div class="container-fluid h-100" id="navigation">
     <div class="d-flex justify-content-between align-items-top">
       <!-- Brand Logo -->
       <div class="container">

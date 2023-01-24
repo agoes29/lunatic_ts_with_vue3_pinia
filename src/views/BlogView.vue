@@ -1,3 +1,40 @@
+<script setup lang="ts">
+  import {watch, onMounted} from "vue"
+  import http from "@/http"
+  import Search from "@/components/partial/Search.vue"
+  import BlogCard from "@/components/partial/BlogCard.vue"
+  import {ref} from "vue"
+  interface Props {
+    searchValue: any
+  }
+
+  onMounted(() => {
+    document.body.className = "blogs"
+  })
+  // const handleSearch = (searchValue: Props) => {}
+  const blogPosts: any = ref([])
+  const filtered: any = ref([])
+
+  watch(blogPosts, (newData) => {
+    filtered.value = newData
+  })
+
+  http
+    .get(
+      "https://api.buttercms.com/v2/posts/?auth_token=3ce31c237fbf10fc491cf8741391edc8a74896c3",
+    )
+    .then((response) => {
+      blogPosts.value = response.data.data
+    })
+
+  const handleSearch = (searchValue: String) => {
+    const result = blogPosts.value.filter((post: any) =>
+      post.title.toLowerCase().includes(searchValue.toLowerCase()),
+    )
+    filtered.value = result
+  }
+</script>
+
 <template>
   <div class="containerize-blog">
     <div class="container-fluid h-100">
@@ -5,27 +42,96 @@
         <h1 class="fw-bold">Blog</h1>
       </div>
       <div class="container w-100 w-md-25" style="margin-bottom: 5%">
-        <form
-          action="https://skeleton-web.prasetyoadisantoso.com/en/blog"
-          method="post"
-        >
-          <input type="hidden" name="_token" value="" />
-          <div class="searchBar">
-            <input
-              type="text"
-              id="searchQueryInput"
-              name="search"
-              placeholder="Search..."
+        <Search @search="handleSearch" />
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <p v-if="!blogPosts.length" class="noBlogPost">
+            No blog post available
+          </p>
+          <div v-else v-for="post in filtered" class="container mb-5 mt-5">
+            <BlogCard
+              :slug="post.slug"
+              :image="post.featured_image"
+              :title="post.title"
+              :summary="post.summary"
             />
-            <button
-              id="searchQuerySubmit"
-              name="searchQuerySubmit"
-              type="submit"
-            >
-              <icon icon="fas fa-magnifying-glass" />
-            </button>
           </div>
-        </form>
+          <div class="container mt-5 w-100 w-md-50">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="container">
+                <a href="" class="text-decoration-none text-gray"
+                  ><i class="fa-solid fa-angles-left"></i>&nbsp;Latest Post</a
+                >
+              </div>
+              <div class="container">
+                <a href="" class="text-decoration-none text-gray"
+                  >Oldest Post&nbsp;<i class="fa-solid fa-angles-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="container text-center mt-5 mt-md-0">
+            <h3 class="fw-bold text-gray">Categories</h3>
+          </div>
+          <div class="container text-center">
+            <ul class="list-group">
+              <li class="list-group-item border-0">
+                <a
+                  class="text-decoration-none text-secondary"
+                  href="https://skeleton-web.prasetyoadisantoso.com/en/blog/category/sample-category"
+                  >Sample Category</a
+                >
+              </li>
+              <li class="list-group-item border-0">
+                <a
+                  class="text-decoration-none text-secondary"
+                  href="https://skeleton-web.prasetyoadisantoso.com/en/blog/category/uncategorized"
+                  >Uncategorized</a
+                >
+              </li>
+              <li class="list-group-item border-0">
+                <a
+                  class="text-decoration-none text-secondary"
+                  href="https://skeleton-web.prasetyoadisantoso.com/en/blog/category/parent-category"
+                  >Parent Category</a
+                >
+              </li>
+              <li class="list-group-item border-0">
+                <a
+                  class="text-decoration-none text-secondary"
+                  href="https://skeleton-web.prasetyoadisantoso.com/en/blog/category/sub-category"
+                  >Sub Category</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="container text-center mt-5">
+            <h3 class="fw-bold text-gray">Tags</h3>
+          </div>
+          <div class="container text-center">
+            <ul class="list-group">
+              <li class="list-group-item border-0">
+                <a
+                  class="text-decoration-none text-secondary"
+                  href="https://skeleton-web.prasetyoadisantoso.com/en/blog/tag/good"
+                  >good</a
+                >
+              </li>
+              <li class="list-group-item border-0">
+                <a
+                  class="text-decoration-none text-secondary"
+                  href="https://skeleton-web.prasetyoadisantoso.com/en/blog/tag/new"
+                  >new</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import {RouterView} from "vue-router"
   import Footers from "./components/Footer.vue"
+  import FootersBlog from "./components/FooterBlog.vue"
   import HeadersHome from "./components/NavbarHome.vue"
   import HeadersBlog from "./components/NavbarBlog.vue"
   import Modal from "./components/partial/Modal.vue"
@@ -24,19 +25,22 @@
       blogs() {
         return this.$route.name === "blog"
       },
+      blogsDetail() {
+        return this.$route.name === "blog-detail"
+      },
     },
   }
 </script>
 
 <template>
-  <!-- <Headers v-if="$route.name != 'landing'" /> -->
   <main v-if="!isLoading">
     <HeadersHome v-if="homes" />
-    <HeadersBlog v-if="blogs" />
+    <HeadersBlog v-else="blogs" />
 
     <Modal />
     <RouterView />
-    <Footers />
+    <Footers v-if="homes" />
+    <FootersBlog v-else="blogs" />
   </main>
   <div class="preloader" v-if="isLoading">
     <img src="./assets/img/logo.png" class="rotate" width="100" height="100" />
