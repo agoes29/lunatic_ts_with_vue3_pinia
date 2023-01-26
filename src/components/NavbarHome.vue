@@ -40,7 +40,12 @@
               </ul>
             </li>
             <li>
-              <router-link to="blog" class="text-dark"
+              <router-link
+                to="blog"
+                class="text-dark"
+                @mouseover="isHovering = true"
+                @mouseout="isHovering = false"
+                :class="{textNavbar: isHovering}"
                 ><icon icon="fas fa-blog" class="me-3" />Blog</router-link
               >
             </li>
@@ -75,5 +80,14 @@
 </template>
 <script setup lang="ts">
   import {RouterLink} from "vue-router"
+</script>
+<script lang="ts">
+  export default {
+    data() {
+      return {
+        isHovering: false,
+      }
+    },
+  }
 </script>
 <style lang=""></style>

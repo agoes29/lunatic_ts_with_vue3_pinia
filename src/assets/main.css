@@ -41,7 +41,11 @@
   height: 50px;
   margin: 40px 0px;
 }
-
+#logoBtn {
+  display: flex;
+  text-decoration: none;
+  color: black;
+}
 #text-logo {
   font-weight: bold;
   align-items: center;
@@ -104,4 +108,12 @@
   #menu-desktop {
     display: none;
   }
+}
+
+.text-gray {
+  color: #343a40;
+}
+
+.textNavbar {
+  color: #343a40;
 }

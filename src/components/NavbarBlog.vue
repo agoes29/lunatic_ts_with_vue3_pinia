@@ -4,10 +4,10 @@
       <!-- Brand Logo -->
       <div class="container">
         <div class="d-flex justify-content-start">
-          <router-link to="/">
+          <router-link to="/" id="logoBtn">
             <img id="logo" src="../assets/logo.svg" alt="" />
+            <h2 class="ms-3 my-auto" id="text-logo">Skeleton Web</h2>
           </router-link>
-          <h2 class="ms-3 my-auto" id="text-logo">Skeleton Web</h2>
         </div>
       </div>
 

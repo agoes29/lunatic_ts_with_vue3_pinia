@@ -67,7 +67,6 @@
       `https://api.buttercms.com/v2/posts/${slug}?auth_token=3ce31c237fbf10fc491cf8741391edc8a74896c3`,
     )
     .then((response) => {
-      // console.log(response)
       blogPage.value = response.data.data
       author.value = response.data.data.author
     })

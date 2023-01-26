@@ -67,12 +67,12 @@
             <div class="d-flex justify-content-between align-items-center">
               <div class="container">
                 <a href="" class="text-decoration-none text-gray"
-                  ><i class="fa-solid fa-angles-left"></i>&nbsp;Latest Post</a
+                  ><icon icon="fas fa-angles-left" />&nbsp;Latest Post</a
                 >
               </div>
               <div class="container">
                 <a href="" class="text-decoration-none text-gray"
-                  >Oldest Post&nbsp;<i class="fa-solid fa-angles-right"></i
+                  >Oldest Post&nbsp;<icon icon="fas fa-angles-right"></icon
                 ></a>
               </div>
             </div>
